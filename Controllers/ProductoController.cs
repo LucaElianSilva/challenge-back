@@ -16,7 +16,6 @@ namespace challenge_back.Controllers
         [Route("GetProductos")]
         public async Task<IActionResult> GetProductos()
         {
-
             try
             {
                 List<Producto> productos = _dbContext.Productos.ToList();
