@@ -1,4 +1,5 @@
 ﻿using challenge_back.Entities;
+using challenge_back.Interfaces;
 using challenge_back.Models;
 using Microsoft.AspNetCore.Mvc;
 namespace challenge_back.Controllers
@@ -7,9 +8,9 @@ namespace challenge_back.Controllers
     [Route("[controller]")]
     public class ProductoController : ControllerBase
     {
-        private readonly ChallengeContext _dbContext;
-        public ProductoController(ChallengeContext dbContext) { 
-            _dbContext = dbContext;
+        private readonly IProductoService _service;
+        public ProductoController(IProductoService service) { 
+            _service = service;
         }
 
         [HttpGet]
@@ -18,8 +19,7 @@ namespace challenge_back.Controllers
         {
             try
             {
-                List<Producto> productos = _dbContext.Productos.ToList();
-                return Ok(productos);
+                return Ok(_service.GetProductos());
             }
             catch (Exception ex)
             {
