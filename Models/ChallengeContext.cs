@@ -7,19 +7,19 @@ namespace challenge_back.Models;
 
 public partial class ChallengeContext : DbContext
 {
-    public ChallengeContext()
-    {
-    }
-
-    public ChallengeContext(DbContextOptions<ChallengeContext> options)
+    public IConfiguration Configuration;
+    public ChallengeContext(DbContextOptions<ChallengeContext> options, IConfiguration configuration)
         : base(options)
     {
+        Configuration = configuration;
     }
 
     public DbSet<Producto> Productos { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=SHIFTA-0138\\SQLEXPRESS;Database=Challenge;Trusted_Connection=True;TrustServerCertificate=True;");
+    {
+        optionsBuilder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
