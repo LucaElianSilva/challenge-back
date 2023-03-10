@@ -17,10 +17,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ChallengeContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 //adding repository
-builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
+builder.Services.AddScoped<IPersonaRepository, PersonaRepository>();
 
 //adding service
-builder.Services.AddScoped<IProductoService, ProductoService>();
+builder.Services.AddScoped<IPersonaService, PersonaService>();
 
 var app = builder.Build();
 

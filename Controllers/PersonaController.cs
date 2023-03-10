@@ -6,20 +6,20 @@ namespace challenge_back.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ProductoController : ControllerBase
+    public class PersonaController : ControllerBase
     {
-        private readonly IProductoService _service;
-        public ProductoController(IProductoService service) { 
+        private readonly IPersonaService _service;
+        public PersonaController(IPersonaService service) { 
             _service = service;
         }
 
         [HttpGet]
-        [Route("GetProductos")]
-        public async Task<IActionResult> GetProductos()
+        [Route("GetPersonas")]
+        public async Task<IActionResult> GetPersonas()
         {
             try
             {
-                return Ok(_service.GetProductos());
+                return Ok(_service.GetPersonas());
             }
             catch (Exception ex)
             {

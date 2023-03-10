@@ -12,19 +12,20 @@ namespace challengeback.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Productos",
+                name: "Personas",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Precio = table.Column<int>(type: "int", nullable: false),
-                    FechaCarga = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Categoria = table.Column<byte>(type: "tinyint", nullable: false)
+                    Apellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Edad = table.Column<int>(type: "int", nullable: false),
+                    Documento = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Sexo = table.Column<byte>(type: "tinyint", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Productos", x => x.Id);
+                    table.PrimaryKey("PK_Personas", x => x.Id);
                 });
         }
 
@@ -32,7 +33,7 @@ namespace challengeback.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Productos");
+                name: "Personas");
         }
     }
 }

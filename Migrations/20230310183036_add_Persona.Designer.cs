@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using challenge_back.Models;
 
@@ -10,9 +11,11 @@ using challenge_back.Models;
 namespace challengeback.Migrations
 {
     [DbContext(typeof(ChallengeContext))]
-    partial class ChallengeContextModelSnapshot : ModelSnapshot
+    [Migration("20230310183036_add_Persona")]
+    partial class addPersona
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

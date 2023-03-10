@@ -4,17 +4,17 @@ using challenge_back.Models;
 
 namespace challenge_back.Repositories
 {
-    public class ProductoRepository : IProductoRepository
+    public class PersonaRepository : IPersonaRepository
     {
         private readonly ChallengeContext _dbContext;
-        public ProductoRepository(ChallengeContext dbContext)
+        public PersonaRepository(ChallengeContext dbContext)
         {
             _dbContext = dbContext;
         }
 
 
-        public IEnumerable<Producto> GetAll() {
-            return _dbContext.Productos;
+        public IEnumerable<Persona> GetAll() {
+            return _dbContext.Personas;
         }
     }
 }

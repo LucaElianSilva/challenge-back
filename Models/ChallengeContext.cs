@@ -14,7 +14,7 @@ public partial class ChallengeContext : DbContext
         Configuration = configuration;
     }
 
-    public DbSet<Producto> Productos { get; set; }
+    public DbSet<Persona> Personas { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

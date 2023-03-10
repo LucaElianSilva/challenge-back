@@ -2,8 +2,8 @@
 
 namespace challenge_back.Interfaces
 {
-    public interface IProductoRepository
+    public interface IPersonaRepository
     {
-        IEnumerable<Producto> GetAll();
+        IEnumerable<Persona> GetAll();
     }
 }

@@ -15,12 +15,11 @@ namespace challenge_back.Models
 
         public void Seed()
         {
-            modelBuilder.Entity<Producto>().HasData(
-                new Producto() { Id = 1, Nombre = "Prod 1", Precio = 5, FechaCarga = DateTime.Now, Categoria = (int)CategoriaEnum.PRODDOS },
-                new Producto() { Id = 2, Nombre = "Prod 2", Precio = 10, FechaCarga = DateTime.Now, Categoria = (int)CategoriaEnum.PRODUNO },
-                new Producto() { Id = 3, Nombre = "Prod 3", Precio = 15, FechaCarga = DateTime.Now, Categoria = (int)CategoriaEnum.PRODDOS },
-                new Producto() { Id = 4, Nombre = "Prod 4", Precio = 20, FechaCarga = DateTime.Now, Categoria = (int)CategoriaEnum.PRODUNO },
-                new Producto() { Id = 5, Nombre = "Prod 5", Precio = 25, FechaCarga = DateTime.Now, Categoria = (int)CategoriaEnum.PRODDOS }
+            modelBuilder.Entity<Persona>().HasData(
+                new Persona() { Id = 1, Nombre = "Luca", Apellido = "Silva", Edad = 22, Documento="42901989",  Sexo = (int)SexoEnum.Masculino },
+                new Persona() { Id = 2, Nombre = "Emma", Apellido = "Watson", Edad = 27, Documento="4564546",  Sexo = (int)SexoEnum.Femenino },
+                new Persona() { Id = 3, Nombre = "Ciro", Apellido = "Silva", Edad = 19, Documento="42901989",  Sexo = (int)SexoEnum.Masculino },
+                new Persona() { Id = 4, Nombre = "Micaela", Apellido = "Anastacia", Edad = 18, Documento="4564233",  Sexo = (int)SexoEnum.Femenino }
             );
         }
     }

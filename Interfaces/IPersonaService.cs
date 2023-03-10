@@ -2,8 +2,8 @@
 
 namespace challenge_back.Interfaces
 {
-    public interface IProductoService 
+    public interface IPersonaService 
     {
-        List<Producto> GetProductos();
+        List<Persona> GetPersonas();
     }
 }
